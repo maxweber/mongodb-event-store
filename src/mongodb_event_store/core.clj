@@ -6,7 +6,7 @@
                      :event-number-key :_number})
 
 (defn append-events-fn [{:keys [collection]} events]
-  (insert! collection events))
+  (mass-insert! collection events))
 
 (defn read-events-fn [{:keys [collection aggregate-id-key event-number-key]} aggregate-id & [from-number]]
   (let [where {aggregate-id-key aggregate-id}
